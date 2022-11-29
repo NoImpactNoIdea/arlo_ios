@@ -24,16 +24,36 @@ class HomeController : UITabBarController {
     static var vc : HomeController?
     
     private let databaseRef = Database.database().reference(),
-                mainController = MainController()
+                mainController = MainController(),
+                messageController = MessageController()
+
     
     let redNotificationDot : UIView = {
         
         let rnd = UIView()
         rnd.translatesAutoresizingMaskIntoConstraints = false
-        rnd.backgroundColor = coreRedColor
+        rnd.backgroundColor = coreDeepColor
         rnd.isHidden = true
         
        return rnd
+    }()
+    
+    lazy var centerButton : NoHighlight = {
+        
+        let hfb = NoHighlight()
+        hfb.translatesAutoresizingMaskIntoConstraints = false
+        hfb.backgroundColor = coreMediumColor
+        hfb.setBackgroundColor(color: coreRedColor, forState: .selected)
+        
+        let config = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
+        let image = UIImage(systemName: "plus", withConfiguration: config)
+        hfb.setImage(image, for: UIControl.State.normal)
+        hfb.tintColor = coreWhiteColor
+        hfb.translatesAutoresizingMaskIntoConstraints = false
+        hfb.isUserInteractionEnabled = true
+        hfb.imageView?.contentMode = .scaleAspectFit
+        
+       return hfb
     }()
     
     func shouldShowNewMatchNotification(shouldShow : Bool) {
@@ -59,27 +79,29 @@ class HomeController : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        self.appearance()
+        self.shouldShowNewMatchNotification(shouldShow: true)
+        
+    }
+    
+    func appearance() {
+        
         self.view.backgroundColor = coreBackgroundColor
-        self.tabBar.backgroundColor = corePurpleColor
+        self.tabBar.backgroundColor = coreWhiteColor
         self.tabBar.backgroundImage = UIImage()
-        self.tabBar.layer.zPosition = 10
         self.tabBar.shadowImage = UIImage()
         
         self.tabBar.clipsToBounds = false
         self.tabBar.layer.masksToBounds = false
-        self.tabBar.layer.shadowColor = coreBlackColor.withAlphaComponent(0.8).cgColor
-        self.tabBar.layer.shadowOpacity = 0.12
-        self.tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)
-        self.tabBar.layer.shadowRadius = 5
-        self.tabBar.layer.shouldRasterize = false
         
         // for text displayed below the tabBar item
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: coreDeepColor], for: .selected)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: coreUltraLightColor], for: .normal)
         
-        self.tabBar.unselectedItemTintColor = coreWhiteColor
+        self.tabBar.unselectedItemTintColor = coreMediumColor
        
         self.addTabsAndCustomCenterCircle {
+            print("controllers loaded")
         }
         
         let appearance = UITabBarItem.appearance()
@@ -119,30 +141,44 @@ class HomeController : UITabBarController {
             globalStatusBarHeight = 30
         }
     }
-   
-    @objc func handleMiddleTab() {
-        
-        UIDevice.vibrateLight()
-        if self.selectedIndex == 1 {
-            self.upDownHappyFaceAnimation(shouldGoDown: true)
-        } else {
-            self.switchTabs(tabIndex: 1)
-        }
-    }
-    
-    var happyButtonCenterYConstaint : NSLayoutConstraint?
     
     private func addTabsAndCustomCenterCircle(completion: @escaping () -> ()) {
         
-        let callsNormal = UIImage(named: "home_nav_icon")?.withRenderingMode(.alwaysOriginal).withTintColor(coreWhiteColor)
-        let callsSelected = UIImage(named: "home_nav_icon")?.withRenderingMode(.alwaysOriginal).withTintColor(matcherGold)
-
+        let configOne = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
+        let imageOne = UIImage(systemName: "note", withConfiguration: configOne)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+        
+        let configTwo = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
+        let imageTwo = UIImage(systemName: "bubble.middle.bottom", withConfiguration: configTwo)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+       
         //MARK: - CALLS TAB
         let mainController = UINavigationController(rootViewController: self.mainController)
-//        self.mainController.homeController = self
+        self.mainController.homeController = self
         mainController.navigationBar.isHidden = true
+        mainController.tabBarItem = UITabBarItem(title: "", image: imageOne, selectedImage: imageOne)
         
-        viewControllers = [mainController]
+        //MARK: - CALLS TAB
+        let messagesController = UINavigationController(rootViewController: self.messageController)
+        self.messageController.homeController = self
+        messagesController.navigationBar.isHidden = true
+        messagesController.tabBarItem = UITabBarItem(title: "", image: imageTwo, selectedImage: imageTwo)
+
+        viewControllers = [mainController, messagesController]
+        
+        guard let mainTabFrame = self.tabBar.items![0].value(forKey: "view") as? UIView else {return}///fetches the frame to place the notification circle
+        
+        self.tabBar.addSubview(self.centerButton)
+        self.centerButton.centerXAnchor.constraint(equalTo: self.tabBar.centerXAnchor, constant: 0).isActive = true
+        self.centerButton.centerYAnchor.constraint(equalTo: mainTabFrame.centerYAnchor, constant: -5).isActive = true
+        self.centerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.centerButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        self.centerButton.layer.cornerRadius = 50/2
+        
+        self.tabBar.addSubview(self.redNotificationDot)
+        self.redNotificationDot.topAnchor.constraint(equalTo: mainTabFrame.bottomAnchor, constant: -5).isActive = true
+        self.redNotificationDot.centerXAnchor.constraint(equalTo: mainTabFrame.centerXAnchor).isActive = true
+        self.redNotificationDot.heightAnchor.constraint(equalToConstant: 5).isActive = true
+        self.redNotificationDot.widthAnchor.constraint(equalToConstant: 5).isActive = true
+        self.redNotificationDot.layer.cornerRadius = 2.5
         
         completion()
     }
@@ -168,38 +204,6 @@ class HomeController : UITabBarController {
     func layout() {
         self.view.layoutIfNeeded()
         self.view.layoutSubviews()
-    }
-    
-    func upDownHappyFaceAnimation(shouldGoDown : Bool) {
-        
-        if shouldGoDown {
-           
-            UIView.animate(withDuration: 0.18, delay: 0, options: .curveEaseInOut) {
-                self.happyButtonCenterYConstaint?.constant = 35
-                self.layout()
-            } completion: { complete in
-                print("face is down")
-            }
-        } else {
-           
-            UIView.animate(withDuration: 0.18, delay: 0, options: .curveEaseInOut) {
-                self.happyButtonCenterYConstaint?.constant = 0
-                self.layout()
-
-            } completion: { complete in
-                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) {
-                    self.layout()
-
-                } completion: { complete in
-                    UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut) {
-                        self.layout()
-
-                    } completion: { complete in
-                        print("face animate is open")
-                    }
-                }
-            }
-        }
     }
     
     func switchTabs(tabIndex: Int) {

@@ -18,12 +18,10 @@ class MainHeaderCell : UIView {
         let hfl = UILabel()
         hfl.translatesAutoresizingMaskIntoConstraints = false
         hfl.backgroundColor = .clear
-        hfl.text = "Hello"
         hfl.textColor = coreDeepColor
         hfl.textAlignment = .left
-        hfl.font = UIFont(name: ralewayRegular, size: 40)
+        hfl.font = UIFont(name: ralewayLight, size: 40)
         hfl.numberOfLines = 2
-        hfl.setLineHeight(lineHeight: 0.1)
         return hfl
     }()
     
@@ -33,10 +31,10 @@ class MainHeaderCell : UIView {
         sii.translatesAutoresizingMaskIntoConstraints = false
         sii.contentMode = .scaleAspectFit
         sii.isUserInteractionEnabled = true
-        let config = UIImage.SymbolConfiguration(pointSize: 15, weight: .light)
-        let image = UIImage(systemName: "heart", withConfiguration: config)
+        let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .light)
+        let image = UIImage(systemName: "heart.circle.fill", withConfiguration: config)
         sii.setImage(image, for: UIControl.State.normal)
-        sii.tintColor = coreRedColor
+        sii.tintColor = coreDeepColor
         sii.translatesAutoresizingMaskIntoConstraints = false
         sii.isUserInteractionEnabled = true
         sii.imageView?.contentMode = .scaleAspectFit
@@ -64,8 +62,9 @@ class MainHeaderCell : UIView {
         self.backgroundColor = coreWhiteColor
         self.addViews()
         
-        let fullMessage = "Hello\nCharlie"
-        self.headerLabel.colorFontString(text: fullMessage, coloredText: "Charlie", color: coreUltraLightColor, fontName: ralewayBold, fontSize: 40)
+        let fullMessage = "Hello,\nCharlie"
+        self.headerLabel.colorFontString(text: fullMessage, coloredText: "Charlie", color: coreMediumColor, fontName: ralewaySemiBold, fontSize: 40)
+        self.headerLabel.setLineSpacing(lineSpacing: 0.1, lineHeightMultiple: 1.0)
         
         self.callAnimation()
         

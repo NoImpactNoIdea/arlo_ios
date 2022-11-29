@@ -90,9 +90,6 @@ class SpotLightFeeder : UICollectionViewCell {
         dcl.contentMode = .scaleAspectFill
         dcl.isUserInteractionEnabled = false
         dcl.clipsToBounds = true
-        let image = UIImage(named: "dummy_image")?.withRenderingMode(.alwaysOriginal)
-        dcl.image = image
-        
         return dcl
     }()
     
@@ -100,7 +97,7 @@ class SpotLightFeeder : UICollectionViewCell {
         
         let cv = UIButton()
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = coreMediumColor
+        cv.backgroundColor = coreLightColor
         cv.layer.cornerRadius = 0
         cv.clipsToBounds = true
         
