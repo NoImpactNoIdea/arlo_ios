@@ -44,7 +44,7 @@ class HomeController : UITabBarController {
         
         let rnd = UIView()
         rnd.translatesAutoresizingMaskIntoConstraints = false
-        rnd.backgroundColor = coreDeepColor
+        rnd.backgroundColor = coreAccentColor
         rnd.isHidden = true
         
        return rnd

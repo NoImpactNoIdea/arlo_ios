@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C4FD819227D459FADFCC3D01 /* Pods_projectarlo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08A84D17A3088E991EDD297 /* Pods_projectarlo.framework */; };
+		E3173F912936ACFD008C379F /* audio_clip_playing.json in Resources */ = {isa = PBXBuildFile; fileRef = E3173F902936ACFD008C379F /* audio_clip_playing.json */; };
+		E3173F932936AE94008C379F /* audio_clip_playing_anim.json in Resources */ = {isa = PBXBuildFile; fileRef = E3173F922936AE94008C379F /* audio_clip_playing_anim.json */; };
+		E3173F952936B56A008C379F /* woman-g50dfc13e7_1920.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3173F942936B56A008C379F /* woman-g50dfc13e7_1920.jpg */; };
 		E37F32ED2935A35D00A75ABE /* DecisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32EC2935A35D00A75ABE /* DecisionController.swift */; };
 		E37F32F02935A51900A75ABE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32EF2935A51900A75ABE /* MainController.swift */; };
 		E37F32F32935A59D00A75ABE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32F22935A59D00A75ABE /* Extensions.swift */; };
@@ -49,6 +52,9 @@
 		0CBD422ED6B78CBDEC3FC935 /* Pods-projectarlo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectarlo.debug.xcconfig"; path = "Target Support Files/Pods-projectarlo/Pods-projectarlo.debug.xcconfig"; sourceTree = "<group>"; };
 		C08A84D17A3088E991EDD297 /* Pods_projectarlo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectarlo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C54708B191ABA62C7D44402B /* Pods-projectarlo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectarlo.release.xcconfig"; path = "Target Support Files/Pods-projectarlo/Pods-projectarlo.release.xcconfig"; sourceTree = "<group>"; };
+		E3173F902936ACFD008C379F /* audio_clip_playing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = audio_clip_playing.json; sourceTree = "<group>"; };
+		E3173F922936AE94008C379F /* audio_clip_playing_anim.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = audio_clip_playing_anim.json; sourceTree = "<group>"; };
+		E3173F942936B56A008C379F /* woman-g50dfc13e7_1920.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "woman-g50dfc13e7_1920.jpg"; sourceTree = "<group>"; };
 		E37F32EC2935A35D00A75ABE /* DecisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionController.swift; sourceTree = "<group>"; };
 		E37F32EF2935A51900A75ABE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		E37F32F22935A59D00A75ABE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				E37F33272935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg */,
+				E3173F942936B56A008C379F /* woman-g50dfc13e7_1920.jpg */,
 			);
 			path = ImagesIcons;
 			sourceTree = "<group>";
@@ -207,6 +214,8 @@
 		E37F33222935AF0B00A75ABE /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				E3173F922936AE94008C379F /* audio_clip_playing_anim.json */,
+				E3173F902936ACFD008C379F /* audio_clip_playing.json */,
 				E37F33232935AF1800A75ABE /* purple_pulse.json */,
 			);
 			path = Animations;
@@ -355,6 +364,7 @@
 				E3D3BDC42935A0F000FD191C /* LaunchScreen.storyboard in Resources */,
 				E37F33122935A7B300A75ABE /* Raleway-Light.ttf in Resources */,
 				E37F331E2935A7B300A75ABE /* Raleway-Thin.ttf in Resources */,
+				E3173F912936ACFD008C379F /* audio_clip_playing.json in Resources */,
 				E37F33132935A7B300A75ABE /* Raleway-ExtraBoldItalic.ttf in Resources */,
 				E37F33142935A7B300A75ABE /* Raleway-Regular.ttf in Resources */,
 				E37F33112935A7B300A75ABE /* Raleway-SemiBoldItalic.ttf in Resources */,
@@ -365,7 +375,9 @@
 				E37F331D2935A7B300A75ABE /* Raleway-BoldItalic.ttf in Resources */,
 				E37F33172935A7B300A75ABE /* Raleway-ThinItalic.ttf in Resources */,
 				E37F33202935A7B300A75ABE /* Raleway-ExtraBold.ttf in Resources */,
+				E3173F952936B56A008C379F /* woman-g50dfc13e7_1920.jpg in Resources */,
 				E37F331C2935A7B300A75ABE /* Raleway-MediumItalic.ttf in Resources */,
+				E3173F932936AE94008C379F /* audio_clip_playing_anim.json in Resources */,
 				E37F331A2935A7B300A75ABE /* Raleway-Black.ttf in Resources */,
 				E37F33182935A7B300A75ABE /* Raleway-SemiBold.ttf in Resources */,
 				E37F33282935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg in Resources */,

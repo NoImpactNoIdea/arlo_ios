@@ -64,6 +64,7 @@ var coreWhiteColor = UIColor(hex: 0xFFFFFF),
     coreMediumColor = UIColor(hex: 0x5d3a6f),
     coreLightColor = UIColor(hex: 0xaa98b5),
     coreUltraLightColor = UIColor(hex: 0xcbc1d2),
+    coreAccentColor = UIColor(hex: 0xEC5873),
 
     
     //FOR THE CHAT CONTROLLER, WHEN A USER SWIPES LEFT TO EXPOSE THE REPLY ARROW

@@ -10,4 +10,4 @@ import Foundation
 
 var globalStatusBarHeight : CGFloat = 0.0,
     globalFooterHeight : CGFloat = 0.0,
-    spotlightDivisorHeight : CGFloat = 12.0
+    spotlightDivisorHeight : CGFloat = 10.0

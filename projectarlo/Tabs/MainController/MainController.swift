@@ -49,10 +49,10 @@ class MainController : UIViewController {
         let hfl = UILabel()
         hfl.translatesAutoresizingMaskIntoConstraints = false
         hfl.backgroundColor = .clear
-        hfl.text = "View all"
-        hfl.textColor = coreLightColor
+        hfl.text = "view all"
+        hfl.textColor = coreAccentColor.withAlphaComponent(0.8)
         hfl.textAlignment = .right
-        hfl.font = UIFont(name: ralewayExtraBold, size: 14)
+        hfl.font = UIFont(name: ralewaySemiBold, size: 14)
         
         return hfl
     }()
@@ -64,7 +64,6 @@ class MainController : UIViewController {
         
        return mhc
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +95,16 @@ class MainController : UIViewController {
         
     }
     
+    let centerPipLine : UIView = {
+        
+        let cpl = UIView()
+        cpl.translatesAutoresizingMaskIntoConstraints = false
+        cpl.backgroundColor = coreUltraLightColor
+        
+       return cpl
+    }()
+    
+    
     func addViews() {
         
         let headerCellHeight = UIScreen.main.bounds.height / spotlightDivisorHeight
@@ -106,6 +115,7 @@ class MainController : UIViewController {
         self.view.addSubview(self.nearYouLabel)
         self.view.addSubview(self.mainCardFeederView)
         self.view.addSubview(self.viewAll)
+        self.view.addSubview(self.centerPipLine)
 
         self.mainHeaderCell.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
         self.mainHeaderCell.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
@@ -127,10 +137,15 @@ class MainController : UIViewController {
         self.nearYouLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         self.nearYouLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        self.mainCardFeederView.topAnchor.constraint(equalTo: self.viewAll.bottomAnchor, constant: 10).isActive = true
+        self.mainCardFeederView.topAnchor.constraint(equalTo: self.viewAll.bottomAnchor, constant: -10).isActive = true
         self.mainCardFeederView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.mainCardFeederView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         self.mainCardFeederView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
+       
+        self.centerPipLine.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.centerPipLine.topAnchor.constraint(equalTo: self.mainCardFeederView.bottomAnchor, constant: 5).isActive = true
+        self.centerPipLine.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        self.centerPipLine.heightAnchor.constraint(equalToConstant: 2).isActive = true
         
     }
 }

@@ -15,11 +15,11 @@ class SpotLightCollectionView : UICollectionView, UICollectionViewDelegateFlowLa
     private let spotlightID = "spotlightID"
     
     var mainController : MainController?
-    
+  
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         
-        self.backgroundColor = coreWhiteColor
+        self.backgroundColor = .clear
         self.translatesAutoresizingMaskIntoConstraints = false
         self.dataSource = self
         self.delegate = self
@@ -45,7 +45,7 @@ class SpotLightCollectionView : UICollectionView, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.frame.height + 10, height: UIScreen.main.bounds.height / spotlightDivisorHeight)///roughly height
+        return CGSize(width: self.frame.height, height: UIScreen.main.bounds.height / spotlightDivisorHeight)///roughly height
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,6 +90,8 @@ class SpotLightFeeder : UICollectionViewCell {
         dcl.contentMode = .scaleAspectFill
         dcl.isUserInteractionEnabled = false
         dcl.clipsToBounds = true
+        dcl.image = UIImage(named: "dummy_image_two")?.withRenderingMode(.alwaysOriginal)
+
         return dcl
     }()
     
@@ -104,10 +106,37 @@ class SpotLightFeeder : UICollectionViewCell {
         return cv
     }()
     
+    var nameLabel : UILabel = {
+        
+        let hfl = UILabel()
+        hfl.translatesAutoresizingMaskIntoConstraints = false
+        hfl.backgroundColor = .clear
+        hfl.text = "Cristina"
+        hfl.textColor = coreMediumColor
+        hfl.textAlignment = .center
+        hfl.font = UIFont(name: ralewaySemiBold, size: 13)
+        hfl.clipsToBounds = false
+        hfl.layer.masksToBounds = false
+        
+        return hfl
+    }()
+    
+    var addIcon : UIImageView = {
+        
+        let sii = UIImageView()
+        let config = UIImage.SymbolConfiguration(pointSize: 17, weight: .light)
+        let image = UIImage(systemName: "plus.circle.fill", withConfiguration: config)
+        sii.image = image
+        sii.tintColor = coreAccentColor
+        sii.translatesAutoresizingMaskIntoConstraints = false
+        sii.backgroundColor = coreWhiteColor
+        return sii
+    }()
+  
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = coreWhiteColor
+        self.backgroundColor = .clear
         self.addViews()
         
     }
@@ -117,27 +146,38 @@ class SpotLightFeeder : UICollectionViewCell {
         self.addSubview(self.coloredRingView)
         self.addSubview(self.containerView)
         self.containerView.addSubview(self.profileImageView)
-       
-        self.containerView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        self.addSubview(self.nameLabel)
+        self.addSubview(self.addIcon)
+
+        self.containerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 3).isActive = true
         self.containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        self.containerView.heightAnchor.constraint(equalToConstant: self.frame.height - 10).isActive = true
-        self.containerView.widthAnchor.constraint(equalToConstant: self.frame.height - 10).isActive = true
-        self.containerView.layer.cornerRadius = (self.frame.height - 10) / 2
+        self.containerView.heightAnchor.constraint(equalToConstant: self.frame.height - 22).isActive = true
+        self.containerView.widthAnchor.constraint(equalToConstant: self.frame.height - 22).isActive = true
+        self.containerView.layer.cornerRadius = (self.frame.height - 22) / 2
         
-//        self.containerView.backgroundColor = .red
-        
-        self.profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        self.profileImageView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: 0).isActive = true
         self.profileImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        self.profileImageView.heightAnchor.constraint(equalToConstant: self.frame.height - 14).isActive = true
-        self.profileImageView.widthAnchor.constraint(equalToConstant: self.frame.height - 14).isActive = true
-        self.profileImageView.layer.cornerRadius = (self.frame.height - 14) / 2
+        self.profileImageView.heightAnchor.constraint(equalToConstant: self.frame.height - 26).isActive = true
+        self.profileImageView.widthAnchor.constraint(equalToConstant: self.frame.height - 26).isActive = true
+        self.profileImageView.layer.cornerRadius = (self.frame.height - 26) / 2
 
-        self.coloredRingView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        self.coloredRingView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: 0).isActive = true
         self.coloredRingView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        self.coloredRingView.heightAnchor.constraint(equalToConstant: self.frame.height - 8).isActive = true
-        self.coloredRingView.widthAnchor.constraint(equalToConstant: self.frame.height - 8).isActive = true
-        self.coloredRingView.layer.cornerRadius = (self.frame.height - 8) / 2
-
+        self.coloredRingView.heightAnchor.constraint(equalToConstant: self.frame.height - 20).isActive = true
+        self.coloredRingView.widthAnchor.constraint(equalToConstant: self.frame.height - 20).isActive = true
+        self.coloredRingView.layer.cornerRadius = (self.frame.height - 20) / 2
+        
+        self.nameLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -2).isActive = true
+        self.nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        self.nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.nameLabel.sizeToFit()
+        
+        self.addIcon.centerXAnchor.constraint(equalTo: self.coloredRingView.rightAnchor, constant: -10).isActive = true
+        self.addIcon.centerYAnchor.constraint(equalTo: self.coloredRingView.topAnchor, constant: 10).isActive = true
+        self.addIcon.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        self.addIcon.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        self.addIcon.layer.cornerRadius = 20 / 2
+        
     }
     
     required init?(coder: NSCoder) {

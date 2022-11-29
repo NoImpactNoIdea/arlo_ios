@@ -34,7 +34,7 @@ class MainHeaderCell : UIView {
         let config = UIImage.SymbolConfiguration(pointSize: 30, weight: .light)
         let image = UIImage(systemName: "heart.circle.fill", withConfiguration: config)
         sii.setImage(image, for: UIControl.State.normal)
-        sii.tintColor = coreDeepColor
+        sii.tintColor = coreAccentColor
         sii.translatesAutoresizingMaskIntoConstraints = false
         sii.isUserInteractionEnabled = true
         sii.imageView?.contentMode = .scaleAspectFit
@@ -55,7 +55,8 @@ class MainHeaderCell : UIView {
     
        return lav
     }()
-   
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -86,9 +87,9 @@ class MainHeaderCell : UIView {
         self.pulseAnimation.centerXAnchor.constraint(equalTo: self.messagesButton.centerXAnchor, constant: 0).isActive = true
         self.pulseAnimation.heightAnchor.constraint(equalToConstant: 70).isActive = true
         self.pulseAnimation.widthAnchor.constraint(equalToConstant: 70).isActive = true
-
+        
         self.headerLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-        self.headerLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 30).isActive = true
+        self.headerLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 35).isActive = true
         self.headerLabel.rightAnchor.constraint(equalTo: self.messagesButton.leftAnchor, constant: -30).isActive = true
         self.headerLabel.sizeToFit()
         
