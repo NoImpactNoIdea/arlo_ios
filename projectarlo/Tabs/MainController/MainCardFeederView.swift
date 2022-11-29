@@ -146,7 +146,7 @@ class MainCardFeederView : UIView {
         audioAnimation.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         if counter != 0 {
-            imageViewPerson.image = UIImage(named: "dummy_image")?.withRenderingMode(.alwaysOriginal)
+            imageViewPerson.image = UIImage(named: "dummy_image_two")?.withRenderingMode(.alwaysOriginal)
 
             audioAnimation.alpha = 1.0
           
@@ -170,7 +170,7 @@ class MainCardFeederView : UIView {
             blurredEffectView.bottomAnchor.constraint(equalTo: card.bottomAnchor).isActive = true
             
             
-            imageViewPerson.image = UIImage(named: "dummy_image_two")?.withRenderingMode(.alwaysOriginal)
+            imageViewPerson.image = UIImage(named: "dummy_image")?.withRenderingMode(.alwaysOriginal)
 
             card.rotate(angle: 2)
             cardShadowView.rotate(angle: 2)

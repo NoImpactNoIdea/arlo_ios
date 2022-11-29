@@ -25,7 +25,11 @@ class HomeController : UITabBarController {
     
     private let databaseRef = Database.database().reference(),
                 mainController = MainController(),
-                messageController = MessageController()
+                messageController = MessageController(),
+                heartController = HeartController(),
+                searchController = SearchController(),
+                dummyController = DummyController()
+
     
     var pulseAnimation : LottieAnimationView = {
         
@@ -55,13 +59,22 @@ class HomeController : UITabBarController {
         let hfb = NoHighlight()
         hfb.translatesAutoresizingMaskIntoConstraints = false
         hfb.backgroundColor = coreMediumColor
-        let config = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
+        let config = UIImage.SymbolConfiguration(pointSize: 25, weight: .light)
         let image = UIImage(systemName: "plus", withConfiguration: config)
         hfb.setImage(image, for: UIControl.State.normal)
         hfb.tintColor = coreWhiteColor
         hfb.translatesAutoresizingMaskIntoConstraints = false
         hfb.isUserInteractionEnabled = true
         hfb.imageView?.contentMode = .scaleAspectFit
+        
+        hfb.clipsToBounds = false
+        hfb.layer.masksToBounds = false
+        hfb.layer.shadowColor = coreMediumColor.withAlphaComponent(1.0).cgColor
+        hfb.layer.shadowOpacity = 0.3
+        hfb.layer.shadowOffset = CGSize(width: 0, height: 20)
+        hfb.layer.shadowRadius = 15
+        hfb.layer.shouldRasterize = false
+        hfb.isUserInteractionEnabled = false
         
        return hfb
     }()
@@ -91,7 +104,6 @@ class HomeController : UITabBarController {
        
         self.appearance()
         self.shouldShowNewMatchNotification(shouldShow: true)
-        self.beginAnimation()
         
     }
     
@@ -153,13 +165,30 @@ class HomeController : UITabBarController {
         }
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+//        self.tabBar.itemPositioning = .
+        self.tabBar.itemSpacing = 10
+    }
+    
     private func addTabsAndCustomCenterCircle(completion: @escaping () -> ()) {
         
-        let configOne = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
-        let imageOne = UIImage(systemName: "note", withConfiguration: configOne)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+        let configOne = UIImage.SymbolConfiguration(pointSize: 19.5, weight: .light)
+        let imageOne = UIImage(systemName: "square.on.square.fill", withConfiguration: configOne)?.withTintColor(coreAccentColor).withRenderingMode(.alwaysOriginal)
         
-        let configTwo = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
+        let configTwo = UIImage.SymbolConfiguration(pointSize: 19.5, weight: .light)
         let imageTwo = UIImage(systemName: "bubble.middle.bottom", withConfiguration: configTwo)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+        
+        let configThree = UIImage.SymbolConfiguration(pointSize: 19.5, weight: .light)
+        let imageThree = UIImage(systemName: "magnifyingglass", withConfiguration: configThree)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+        
+        let configFour = UIImage.SymbolConfiguration(pointSize: 19.5, weight: .light)
+        let imageFour = UIImage(systemName: "heart", withConfiguration: configFour)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+        
+        let configFive = UIImage.SymbolConfiguration(pointSize: 19.5, weight: .light)
+        let imageFive = UIImage(systemName: "heart", withConfiguration: configFive)?.withTintColor(coreMediumColor).withRenderingMode(.alwaysOriginal)
+       
        
         //MARK: - CALLS TAB
         let mainController = UINavigationController(rootViewController: self.mainController)
@@ -172,40 +201,45 @@ class HomeController : UITabBarController {
         self.messageController.homeController = self
         messagesController.navigationBar.isHidden = true
         messagesController.tabBarItem = UITabBarItem(title: "", image: imageTwo, selectedImage: imageTwo)
+        
+        //MARK: - CALLS TAB
+        let heartController = UINavigationController(rootViewController: self.heartController)
+        self.heartController.homeController = self
+        heartController.navigationBar.isHidden = true
+        heartController.tabBarItem = UITabBarItem(title: "", image: imageFour, selectedImage: imageFour)
+        
+        //MARK: - CALLS TAB
+        let searchController = UINavigationController(rootViewController: self.searchController)
+        self.searchController.homeController = self
+        searchController.navigationBar.isHidden = true
+        searchController.tabBarItem = UITabBarItem(title: "", image: imageThree, selectedImage: imageThree)
+        
+        //MARK: - CALLS TAB
+        let dummyController = UINavigationController(rootViewController: self.dummyController)
+        dummyController.navigationBar.isHidden = true
+        dummyController.tabBarItem = UITabBarItem(title: "", image: imageFive, selectedImage: imageFour)
 
-        viewControllers = [mainController, messagesController]
+        viewControllers = [mainController, searchController, dummyController, heartController, messagesController]
         
         guard let mainTabFrame = self.tabBar.items![0].value(forKey: "view") as? UIView else {return}///fetches the frame to place the notification circle
         
-//        self.tabBar.addSubview(self.pulseAnimation)
         self.tabBar.addSubview(self.centerButton)
         self.centerButton.centerXAnchor.constraint(equalTo: self.tabBar.centerXAnchor, constant: 0).isActive = true
         self.centerButton.centerYAnchor.constraint(equalTo: mainTabFrame.centerYAnchor, constant: -15).isActive = true
-        self.centerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        self.centerButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        self.centerButton.layer.cornerRadius = 50/2
-        
-//        self.pulseAnimation.centerYAnchor.constraint(equalTo: self.centerButton.centerYAnchor, constant: 0).isActive = true
-//        self.pulseAnimation.centerXAnchor.constraint(equalTo: self.centerButton.centerXAnchor, constant: 0).isActive = true
-//        self.pulseAnimation.heightAnchor.constraint(equalToConstant: 90).isActive = true
-//        self.pulseAnimation.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        
+        self.centerButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        self.centerButton.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        self.centerButton.layer.cornerRadius = 60/2
+       
         self.tabBar.addSubview(self.redNotificationDot)
         self.redNotificationDot.topAnchor.constraint(equalTo: mainTabFrame.bottomAnchor, constant: -10).isActive = true
         self.redNotificationDot.centerXAnchor.constraint(equalTo: mainTabFrame.centerXAnchor).isActive = true
-        self.redNotificationDot.heightAnchor.constraint(equalToConstant: 5).isActive = true
-        self.redNotificationDot.widthAnchor.constraint(equalToConstant: 5).isActive = true
-        self.redNotificationDot.layer.cornerRadius = 2.5
+        self.redNotificationDot.heightAnchor.constraint(equalToConstant: 2.5).isActive = true
+        self.redNotificationDot.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        self.redNotificationDot.layer.cornerRadius = 2.5 / 2
         
         completion()
     }
-    
-    @objc func beginAnimation() {
-//        self.pulseAnimation.play { complete in
-//            self.perform(#selector(self.beginAnimation), with: nil, afterDelay: 5.0)
-//        }
-    }
-    
+  
     func hideBottomToolBar(shouldHide : Bool) {
         
         if shouldHide {

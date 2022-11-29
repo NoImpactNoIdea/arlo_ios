@@ -100,6 +100,7 @@ class MainController : UIViewController {
         let cpl = UIView()
         cpl.translatesAutoresizingMaskIntoConstraints = false
         cpl.backgroundColor = coreUltraLightColor
+        cpl.isHidden = true
         
        return cpl
     }()

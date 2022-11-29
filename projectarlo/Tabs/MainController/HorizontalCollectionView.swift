@@ -51,6 +51,13 @@ class SpotLightCollectionView : UICollectionView, UICollectionViewDelegateFlowLa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = self.dequeueReusableCell(withReuseIdentifier: self.spotlightID, for: indexPath) as! SpotLightFeeder
         cell.spotLightCollectionView = self
+        
+        if indexPath.item == 0 {
+            cell.addIcon.isHidden = false
+        } else {
+            cell.addIcon.isHidden = true
+        }
+        
         return cell
     }
     
