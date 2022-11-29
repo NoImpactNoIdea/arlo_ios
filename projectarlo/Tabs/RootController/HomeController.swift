@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import Firebase
-
+import Lottie
 import UIKit
 
 class NoHighlight: UIButton {
@@ -26,6 +26,18 @@ class HomeController : UITabBarController {
     private let databaseRef = Database.database().reference(),
                 mainController = MainController(),
                 messageController = MessageController()
+    
+    var pulseAnimation : LottieAnimationView = {
+        
+        let lav = LottieAnimationView.init(name: "purple_pulse")
+        lav.translatesAutoresizingMaskIntoConstraints = false
+        lav.loopMode = .playOnce
+        lav.animationSpeed = 1.0
+        lav.backgroundBehavior = .pauseAndRestore
+    
+       return lav
+    }()
+   
 
     
     let redNotificationDot : UIView = {
@@ -43,8 +55,6 @@ class HomeController : UITabBarController {
         let hfb = NoHighlight()
         hfb.translatesAutoresizingMaskIntoConstraints = false
         hfb.backgroundColor = coreMediumColor
-        hfb.setBackgroundColor(color: coreRedColor, forState: .selected)
-        
         let config = UIImage.SymbolConfiguration(pointSize: 22.5, weight: .light)
         let image = UIImage(systemName: "plus", withConfiguration: config)
         hfb.setImage(image, for: UIControl.State.normal)
@@ -81,6 +91,7 @@ class HomeController : UITabBarController {
        
         self.appearance()
         self.shouldShowNewMatchNotification(shouldShow: true)
+        self.beginAnimation()
         
     }
     
@@ -166,21 +177,33 @@ class HomeController : UITabBarController {
         
         guard let mainTabFrame = self.tabBar.items![0].value(forKey: "view") as? UIView else {return}///fetches the frame to place the notification circle
         
+//        self.tabBar.addSubview(self.pulseAnimation)
         self.tabBar.addSubview(self.centerButton)
         self.centerButton.centerXAnchor.constraint(equalTo: self.tabBar.centerXAnchor, constant: 0).isActive = true
-        self.centerButton.centerYAnchor.constraint(equalTo: mainTabFrame.centerYAnchor, constant: -5).isActive = true
+        self.centerButton.centerYAnchor.constraint(equalTo: mainTabFrame.centerYAnchor, constant: -15).isActive = true
         self.centerButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.centerButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         self.centerButton.layer.cornerRadius = 50/2
         
+//        self.pulseAnimation.centerYAnchor.constraint(equalTo: self.centerButton.centerYAnchor, constant: 0).isActive = true
+//        self.pulseAnimation.centerXAnchor.constraint(equalTo: self.centerButton.centerXAnchor, constant: 0).isActive = true
+//        self.pulseAnimation.heightAnchor.constraint(equalToConstant: 90).isActive = true
+//        self.pulseAnimation.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        
         self.tabBar.addSubview(self.redNotificationDot)
-        self.redNotificationDot.topAnchor.constraint(equalTo: mainTabFrame.bottomAnchor, constant: -5).isActive = true
+        self.redNotificationDot.topAnchor.constraint(equalTo: mainTabFrame.bottomAnchor, constant: -10).isActive = true
         self.redNotificationDot.centerXAnchor.constraint(equalTo: mainTabFrame.centerXAnchor).isActive = true
         self.redNotificationDot.heightAnchor.constraint(equalToConstant: 5).isActive = true
         self.redNotificationDot.widthAnchor.constraint(equalToConstant: 5).isActive = true
         self.redNotificationDot.layer.cornerRadius = 2.5
         
         completion()
+    }
+    
+    @objc func beginAnimation() {
+//        self.pulseAnimation.play { complete in
+//            self.perform(#selector(self.beginAnimation), with: nil, afterDelay: 5.0)
+//        }
     }
     
     func hideBottomToolBar(shouldHide : Bool) {

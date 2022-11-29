@@ -57,7 +57,7 @@ class MainCardFeederView : UIView {
     func addCard(card: UIView) {
         
         let frameWidth = self.frame.width
-        let preferredWidth = frameWidth / 1.3
+        var preferredWidth = frameWidth / 1.3
         var verticalOffset : CGFloat = 0.0
         
         switch counter {
@@ -70,13 +70,21 @@ class MainCardFeederView : UIView {
         
         card.translatesAutoresizingMaskIntoConstraints = false
         card.layer.cornerRadius = 40
+        
+        var preferredheight = preferredWidth * 1.1
+        
+        if preferredheight + 50 >= self.frame.height {
+            preferredheight = self.frame.height - 40
+            preferredWidth = preferredWidth - 40
+            print("I AM IN HERE?")
+        }
        
         self.addSubview(card)
 
         card.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: verticalOffset).isActive = true
         card.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: verticalOffset).isActive = true
         card.widthAnchor.constraint(equalToConstant: preferredWidth).isActive = true
-        card.heightAnchor.constraint(equalToConstant: preferredWidth * 1.1).isActive = true
+        card.heightAnchor.constraint(equalToConstant: preferredheight).isActive = true
         
     }
     

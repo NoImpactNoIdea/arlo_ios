@@ -20,7 +20,7 @@ class MainHeaderCell : UIView {
         hfl.backgroundColor = .clear
         hfl.textColor = coreDeepColor
         hfl.textAlignment = .left
-        hfl.font = UIFont(name: ralewayLight, size: 40)
+        hfl.font = UIFont(name: ralewayLight, size: 35)
         hfl.numberOfLines = 2
         return hfl
     }()
@@ -62,8 +62,8 @@ class MainHeaderCell : UIView {
         self.backgroundColor = coreWhiteColor
         self.addViews()
         
-        let fullMessage = "Hello,\nCharlie"
-        self.headerLabel.colorFontString(text: fullMessage, coloredText: "Charlie", color: coreMediumColor, fontName: ralewaySemiBold, fontSize: 40)
+        let fullMessage = "Hello,\nCristina"
+        self.headerLabel.colorFontString(text: fullMessage, coloredText: "Cristina", color: coreMediumColor, fontName: ralewaySemiBold, fontSize: 35)
         self.headerLabel.setLineSpacing(lineSpacing: 0.1, lineHeightMultiple: 1.0)
         
         self.callAnimation()

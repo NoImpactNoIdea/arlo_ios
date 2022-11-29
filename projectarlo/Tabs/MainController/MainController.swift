@@ -83,7 +83,6 @@ class MainController : UIViewController {
             if self.mainCardFeederView.frame.height != 0.0 {
                 self.hasViewLoaded = true
                 self.dummyCall()
-
             }
         }
     }
@@ -98,6 +97,8 @@ class MainController : UIViewController {
     }
     
     func addViews() {
+        
+        let headerCellHeight = UIScreen.main.bounds.height / spotlightDivisorHeight
         
         self.view.addSubview(self.mainHeaderCell)
         self.view.addSubview(self.spotLightCollectionView)
@@ -114,7 +115,7 @@ class MainController : UIViewController {
         self.spotLightCollectionView.topAnchor.constraint(equalTo: self.mainHeaderCell.bottomAnchor, constant: 10).isActive = true
         self.spotLightCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.spotLightCollectionView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        self.spotLightCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.spotLightCollectionView.heightAnchor.constraint(equalToConstant: headerCellHeight).isActive = true
         
         self.viewAll.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -40).isActive = true
         self.viewAll.topAnchor.constraint(equalTo: self.spotLightCollectionView.bottomAnchor, constant: 20).isActive = true
@@ -126,16 +127,10 @@ class MainController : UIViewController {
         self.nearYouLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         self.nearYouLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-//        self.nearYouLabel.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 30).isActive = true
-//        self.nearYouLabel.topAnchor.constraint(equalTo: self.spotLightCollectionView.bottomAnchor, constant: 20).isActive = true
-//        self.nearYouLabel.rightAnchor.constraint(equalTo: self.nearYouLabel.leftAnchor, constant: -30).isActive = true
-//        self.nearYouLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        
         self.mainCardFeederView.topAnchor.constraint(equalTo: self.viewAll.bottomAnchor, constant: 10).isActive = true
         self.mainCardFeederView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.mainCardFeederView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         self.mainCardFeederView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true
-        
         
     }
 }

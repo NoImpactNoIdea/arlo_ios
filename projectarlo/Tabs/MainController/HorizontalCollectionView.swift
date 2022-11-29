@@ -45,7 +45,7 @@ class SpotLightCollectionView : UICollectionView, UICollectionViewDelegateFlowLa
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 90, height: 100)///roughly height
+        return CGSize(width: self.frame.height + 10, height: UIScreen.main.bounds.height / spotlightDivisorHeight)///roughly height
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -120,21 +120,23 @@ class SpotLightFeeder : UICollectionViewCell {
        
         self.containerView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         self.containerView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
-        self.containerView.heightAnchor.constraint(equalToConstant: 66).isActive = true
-        self.containerView.widthAnchor.constraint(equalToConstant: 66).isActive = true
-        self.containerView.layer.cornerRadius = 66/2
-
-        self.profileImageView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor, constant: 0).isActive = true
-        self.profileImageView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: 0).isActive = true
-        self.profileImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        self.profileImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        self.profileImageView.layer.cornerRadius = 60/2
+        self.containerView.heightAnchor.constraint(equalToConstant: self.frame.height - 10).isActive = true
+        self.containerView.widthAnchor.constraint(equalToConstant: self.frame.height - 10).isActive = true
+        self.containerView.layer.cornerRadius = (self.frame.height - 10) / 2
         
-        self.coloredRingView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor, constant: 0).isActive = true
-        self.coloredRingView.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor, constant: 0).isActive = true
-        self.coloredRingView.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        self.coloredRingView.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        self.coloredRingView.layer.cornerRadius = 70/2
+//        self.containerView.backgroundColor = .red
+        
+        self.profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        self.profileImageView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
+        self.profileImageView.heightAnchor.constraint(equalToConstant: self.frame.height - 14).isActive = true
+        self.profileImageView.widthAnchor.constraint(equalToConstant: self.frame.height - 14).isActive = true
+        self.profileImageView.layer.cornerRadius = (self.frame.height - 14) / 2
+
+        self.coloredRingView.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+        self.coloredRingView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
+        self.coloredRingView.heightAnchor.constraint(equalToConstant: self.frame.height - 8).isActive = true
+        self.coloredRingView.widthAnchor.constraint(equalToConstant: self.frame.height - 8).isActive = true
+        self.coloredRingView.layer.cornerRadius = (self.frame.height - 8) / 2
 
     }
     
