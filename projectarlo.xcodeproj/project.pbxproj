@@ -7,20 +7,82 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C4FD819227D459FADFCC3D01 /* Pods_projectarlo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C08A84D17A3088E991EDD297 /* Pods_projectarlo.framework */; };
+		E37F32ED2935A35D00A75ABE /* DecisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32EC2935A35D00A75ABE /* DecisionController.swift */; };
+		E37F32F02935A51900A75ABE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32EF2935A51900A75ABE /* MainController.swift */; };
+		E37F32F32935A59D00A75ABE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32F22935A59D00A75ABE /* Extensions.swift */; };
+		E37F32F52935A5F700A75ABE /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32F42935A5F700A75ABE /* Globals.swift */; };
+		E37F32F72935A60100A75ABE /* Statics.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32F62935A60100A75ABE /* Statics.swift */; };
+		E37F32FA2935A63400A75ABE /* MainHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32F92935A63400A75ABE /* MainHeaderCell.swift */; };
+		E37F33102935A7B300A75ABE /* Raleway-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F32FE2935A7B000A75ABE /* Raleway-LightItalic.ttf */; };
+		E37F33112935A7B300A75ABE /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F32FF2935A7B000A75ABE /* Raleway-SemiBoldItalic.ttf */; };
+		E37F33122935A7B300A75ABE /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33002935A7B000A75ABE /* Raleway-Light.ttf */; };
+		E37F33132935A7B300A75ABE /* Raleway-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33012935A7B100A75ABE /* Raleway-ExtraBoldItalic.ttf */; };
+		E37F33142935A7B300A75ABE /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33022935A7B100A75ABE /* Raleway-Regular.ttf */; };
+		E37F33152935A7B300A75ABE /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33032935A7B100A75ABE /* Raleway-ExtraLight.ttf */; };
+		E37F33162935A7B300A75ABE /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33042935A7B100A75ABE /* Raleway-Italic.ttf */; };
+		E37F33172935A7B300A75ABE /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33052935A7B100A75ABE /* Raleway-ThinItalic.ttf */; };
+		E37F33182935A7B300A75ABE /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33062935A7B100A75ABE /* Raleway-SemiBold.ttf */; };
+		E37F33192935A7B300A75ABE /* Raleway-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33072935A7B200A75ABE /* Raleway-BlackItalic.ttf */; };
+		E37F331A2935A7B300A75ABE /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33082935A7B200A75ABE /* Raleway-Black.ttf */; };
+		E37F331B2935A7B300A75ABE /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F33092935A7B200A75ABE /* Raleway-Medium.ttf */; };
+		E37F331C2935A7B300A75ABE /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F330A2935A7B200A75ABE /* Raleway-MediumItalic.ttf */; };
+		E37F331D2935A7B300A75ABE /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F330B2935A7B200A75ABE /* Raleway-BoldItalic.ttf */; };
+		E37F331E2935A7B300A75ABE /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F330C2935A7B200A75ABE /* Raleway-Thin.ttf */; };
+		E37F331F2935A7B300A75ABE /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F330D2935A7B300A75ABE /* Raleway-Bold.ttf */; };
+		E37F33202935A7B300A75ABE /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F330E2935A7B300A75ABE /* Raleway-ExtraBold.ttf */; };
+		E37F33212935A7B300A75ABE /* Raleway-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E37F330F2935A7B300A75ABE /* Raleway-ExtraLightItalic.ttf */; };
+		E37F33242935AF1800A75ABE /* purple_pulse.json in Resources */ = {isa = PBXBuildFile; fileRef = E37F33232935AF1800A75ABE /* purple_pulse.json */; };
+		E37F33262935B0EA00A75ABE /* HorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F33252935B0EA00A75ABE /* HorizontalCollectionView.swift */; };
+		E37F33282935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E37F33272935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg */; };
+		E37F332A2935B7FC00A75ABE /* MainCardFeederView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F33292935B7FC00A75ABE /* MainCardFeederView.swift */; };
+		E37F332D2935B8F200A75ABE /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F332C2935B8F200A75ABE /* HomeController.swift */; };
+		E37F33352935BD1900A75ABE /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F33342935BD1900A75ABE /* PushNotificationManager.swift */; };
 		E3D3BDB82935A0EF00FD191C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3BDB72935A0EF00FD191C /* AppDelegate.swift */; };
 		E3D3BDBA2935A0EF00FD191C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3BDB92935A0EF00FD191C /* SceneDelegate.swift */; };
-		E3D3BDBC2935A0EF00FD191C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3BDBB2935A0EF00FD191C /* ViewController.swift */; };
-		E3D3BDBF2935A0EF00FD191C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D3BDBD2935A0EF00FD191C /* Main.storyboard */; };
 		E3D3BDC12935A0F000FD191C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3D3BDC02935A0F000FD191C /* Assets.xcassets */; };
 		E3D3BDC42935A0F000FD191C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3D3BDC22935A0F000FD191C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0CBD422ED6B78CBDEC3FC935 /* Pods-projectarlo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectarlo.debug.xcconfig"; path = "Target Support Files/Pods-projectarlo/Pods-projectarlo.debug.xcconfig"; sourceTree = "<group>"; };
+		C08A84D17A3088E991EDD297 /* Pods_projectarlo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_projectarlo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C54708B191ABA62C7D44402B /* Pods-projectarlo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-projectarlo.release.xcconfig"; path = "Target Support Files/Pods-projectarlo/Pods-projectarlo.release.xcconfig"; sourceTree = "<group>"; };
+		E37F32EC2935A35D00A75ABE /* DecisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionController.swift; sourceTree = "<group>"; };
+		E37F32EF2935A51900A75ABE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		E37F32F22935A59D00A75ABE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E37F32F42935A5F700A75ABE /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		E37F32F62935A60100A75ABE /* Statics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statics.swift; sourceTree = "<group>"; };
+		E37F32F92935A63400A75ABE /* MainHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderCell.swift; sourceTree = "<group>"; };
+		E37F32FE2935A7B000A75ABE /* Raleway-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-LightItalic.ttf"; sourceTree = "<group>"; };
+		E37F32FF2935A7B000A75ABE /* Raleway-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		E37F33002935A7B000A75ABE /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		E37F33012935A7B100A75ABE /* Raleway-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		E37F33022935A7B100A75ABE /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		E37F33032935A7B100A75ABE /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E37F33042935A7B100A75ABE /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
+		E37F33052935A7B100A75ABE /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
+		E37F33062935A7B100A75ABE /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		E37F33072935A7B200A75ABE /* Raleway-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BlackItalic.ttf"; sourceTree = "<group>"; };
+		E37F33082935A7B200A75ABE /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
+		E37F33092935A7B200A75ABE /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		E37F330A2935A7B200A75ABE /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
+		E37F330B2935A7B200A75ABE /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E37F330C2935A7B200A75ABE /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		E37F330D2935A7B300A75ABE /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		E37F330E2935A7B300A75ABE /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E37F330F2935A7B300A75ABE /* Raleway-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		E37F33232935AF1800A75ABE /* purple_pulse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = purple_pulse.json; sourceTree = "<group>"; };
+		E37F33252935B0EA00A75ABE /* HorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionView.swift; sourceTree = "<group>"; };
+		E37F33272935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "portrait-gffcb6fa6d_1920.jpg"; sourceTree = "<group>"; };
+		E37F33292935B7FC00A75ABE /* MainCardFeederView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardFeederView.swift; sourceTree = "<group>"; };
+		E37F332C2935B8F200A75ABE /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		E37F33322935BBAC00A75ABE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E37F33332935BC6F00A75ABE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E37F33342935BD1900A75ABE /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		E3D3BDB42935A0EF00FD191C /* projectarlo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projectarlo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3D3BDB72935A0EF00FD191C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3D3BDB92935A0EF00FD191C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E3D3BDBB2935A0EF00FD191C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E3D3BDBE2935A0EF00FD191C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3D3BDC02935A0F000FD191C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3D3BDC32935A0F000FD191C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3D3BDC52935A0F000FD191C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,17 +93,162 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4FD819227D459FADFCC3D01 /* Pods_projectarlo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A47B40BC26913A28670112C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C08A84D17A3088E991EDD297 /* Pods_projectarlo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1CB68F134C91DED7B80A48F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CBD422ED6B78CBDEC3FC935 /* Pods-projectarlo.debug.xcconfig */,
+				C54708B191ABA62C7D44402B /* Pods-projectarlo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E37F32EA2935A27800A75ABE /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				E3D3BDB72935A0EF00FD191C /* AppDelegate.swift */,
+				E3D3BDB92935A0EF00FD191C /* SceneDelegate.swift */,
+				E37F32EC2935A35D00A75ABE /* DecisionController.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		E37F32EE2935A50500A75ABE /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				E37F332B2935B8E400A75ABE /* RootController */,
+				E37F32F82935A61F00A75ABE /* MainController */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		E37F32F12935A59000A75ABE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E37F32F22935A59D00A75ABE /* Extensions.swift */,
+				E37F32F42935A5F700A75ABE /* Globals.swift */,
+				E37F32F62935A60100A75ABE /* Statics.swift */,
+				E37F33342935BD1900A75ABE /* PushNotificationManager.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E37F32F82935A61F00A75ABE /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				E37F32EF2935A51900A75ABE /* MainController.swift */,
+				E37F32F92935A63400A75ABE /* MainHeaderCell.swift */,
+				E37F33252935B0EA00A75ABE /* HorizontalCollectionView.swift */,
+				E37F33292935B7FC00A75ABE /* MainCardFeederView.swift */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
+		E37F32FB2935A78300A75ABE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33222935AF0B00A75ABE /* Animations */,
+				E37F32FD2935A79100A75ABE /* ImagesIcons */,
+				E37F32FC2935A78C00A75ABE /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		E37F32FC2935A78C00A75ABE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33082935A7B200A75ABE /* Raleway-Black.ttf */,
+				E37F33072935A7B200A75ABE /* Raleway-BlackItalic.ttf */,
+				E37F330D2935A7B300A75ABE /* Raleway-Bold.ttf */,
+				E37F330B2935A7B200A75ABE /* Raleway-BoldItalic.ttf */,
+				E37F330E2935A7B300A75ABE /* Raleway-ExtraBold.ttf */,
+				E37F33012935A7B100A75ABE /* Raleway-ExtraBoldItalic.ttf */,
+				E37F33032935A7B100A75ABE /* Raleway-ExtraLight.ttf */,
+				E37F330F2935A7B300A75ABE /* Raleway-ExtraLightItalic.ttf */,
+				E37F33042935A7B100A75ABE /* Raleway-Italic.ttf */,
+				E37F33002935A7B000A75ABE /* Raleway-Light.ttf */,
+				E37F32FE2935A7B000A75ABE /* Raleway-LightItalic.ttf */,
+				E37F33092935A7B200A75ABE /* Raleway-Medium.ttf */,
+				E37F330A2935A7B200A75ABE /* Raleway-MediumItalic.ttf */,
+				E37F33022935A7B100A75ABE /* Raleway-Regular.ttf */,
+				E37F33062935A7B100A75ABE /* Raleway-SemiBold.ttf */,
+				E37F32FF2935A7B000A75ABE /* Raleway-SemiBoldItalic.ttf */,
+				E37F330C2935A7B200A75ABE /* Raleway-Thin.ttf */,
+				E37F33052935A7B100A75ABE /* Raleway-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E37F32FD2935A79100A75ABE /* ImagesIcons */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33272935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg */,
+			);
+			path = ImagesIcons;
+			sourceTree = "<group>";
+		};
+		E37F33222935AF0B00A75ABE /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33232935AF1800A75ABE /* purple_pulse.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		E37F332B2935B8E400A75ABE /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				E37F332C2935B8F200A75ABE /* HomeController.swift */,
+			);
+			path = RootController;
+			sourceTree = "<group>";
+		};
+		E37F332E2935BB3500A75ABE /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33302935BB4300A75ABE /* Dev */,
+				E37F332F2935BB3D00A75ABE /* Prod */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		E37F332F2935BB3D00A75ABE /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33332935BC6F00A75ABE /* GoogleService-Info.plist */,
+			);
+			path = Prod;
+			sourceTree = "<group>";
+		};
+		E37F33302935BB4300A75ABE /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				E37F33322935BBAC00A75ABE /* GoogleService-Info.plist */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
 		E3D3BDAB2935A0EF00FD191C = {
 			isa = PBXGroup;
 			children = (
 				E3D3BDB62935A0EF00FD191C /* projectarlo */,
 				E3D3BDB52935A0EF00FD191C /* Products */,
+				B1CB68F134C91DED7B80A48F /* Pods */,
+				8A47B40BC26913A28670112C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +263,11 @@
 		E3D3BDB62935A0EF00FD191C /* projectarlo */ = {
 			isa = PBXGroup;
 			children = (
-				E3D3BDB72935A0EF00FD191C /* AppDelegate.swift */,
-				E3D3BDB92935A0EF00FD191C /* SceneDelegate.swift */,
-				E3D3BDBB2935A0EF00FD191C /* ViewController.swift */,
-				E3D3BDBD2935A0EF00FD191C /* Main.storyboard */,
+				E37F332E2935BB3500A75ABE /* Firebase */,
+				E37F32EA2935A27800A75ABE /* Admin */,
+				E37F32EE2935A50500A75ABE /* Tabs */,
+				E37F32F12935A59000A75ABE /* Extensions */,
+				E37F32FB2935A78300A75ABE /* Assets */,
 				E3D3BDC02935A0F000FD191C /* Assets.xcassets */,
 				E3D3BDC22935A0F000FD191C /* LaunchScreen.storyboard */,
 				E3D3BDC52935A0F000FD191C /* Info.plist */,
@@ -74,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D3BDC82935A0F000FD191C /* Build configuration list for PBXNativeTarget "projectarlo" */;
 			buildPhases = (
+				4173B4461018CB6FE77B4A30 /* [CP] Check Pods Manifest.lock */,
 				E3D3BDB02935A0EF00FD191C /* Sources */,
 				E3D3BDB12935A0EF00FD191C /* Frameworks */,
 				E3D3BDB22935A0EF00FD191C /* Resources */,
+				E1FED1202A33A61CFC315D0F /* [CP] Embed Pods Frameworks */,
+				E37F33312935BB5B00A75ABE /* Setup Firebase Environment GoogleService-info.plist */,
 			);
 			buildRules = (
 			);
@@ -125,21 +336,109 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37F33212935A7B300A75ABE /* Raleway-ExtraLightItalic.ttf in Resources */,
+				E37F33152935A7B300A75ABE /* Raleway-ExtraLight.ttf in Resources */,
+				E37F33242935AF1800A75ABE /* purple_pulse.json in Resources */,
+				E37F331F2935A7B300A75ABE /* Raleway-Bold.ttf in Resources */,
+				E37F33162935A7B300A75ABE /* Raleway-Italic.ttf in Resources */,
 				E3D3BDC42935A0F000FD191C /* LaunchScreen.storyboard in Resources */,
+				E37F33122935A7B300A75ABE /* Raleway-Light.ttf in Resources */,
+				E37F331E2935A7B300A75ABE /* Raleway-Thin.ttf in Resources */,
+				E37F33132935A7B300A75ABE /* Raleway-ExtraBoldItalic.ttf in Resources */,
+				E37F33142935A7B300A75ABE /* Raleway-Regular.ttf in Resources */,
+				E37F33112935A7B300A75ABE /* Raleway-SemiBoldItalic.ttf in Resources */,
+				E37F331B2935A7B300A75ABE /* Raleway-Medium.ttf in Resources */,
 				E3D3BDC12935A0F000FD191C /* Assets.xcassets in Resources */,
-				E3D3BDBF2935A0EF00FD191C /* Main.storyboard in Resources */,
+				E37F33192935A7B300A75ABE /* Raleway-BlackItalic.ttf in Resources */,
+				E37F33102935A7B300A75ABE /* Raleway-LightItalic.ttf in Resources */,
+				E37F331D2935A7B300A75ABE /* Raleway-BoldItalic.ttf in Resources */,
+				E37F33172935A7B300A75ABE /* Raleway-ThinItalic.ttf in Resources */,
+				E37F33202935A7B300A75ABE /* Raleway-ExtraBold.ttf in Resources */,
+				E37F331C2935A7B300A75ABE /* Raleway-MediumItalic.ttf in Resources */,
+				E37F331A2935A7B300A75ABE /* Raleway-Black.ttf in Resources */,
+				E37F33182935A7B300A75ABE /* Raleway-SemiBold.ttf in Resources */,
+				E37F33282935B63E00A75ABE /* portrait-gffcb6fa6d_1920.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4173B4461018CB6FE77B4A30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-projectarlo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1FED1202A33A61CFC315D0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-projectarlo/Pods-projectarlo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-projectarlo/Pods-projectarlo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-projectarlo/Pods-projectarlo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E37F33312935BB5B00A75ABE /* Setup Firebase Environment GoogleService-info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Setup Firebase Environment GoogleService-info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Name of the resource we're selectively copying\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\nGOOGLESERVICE_INFO_DEV=${PROJECT_DIR}/${TARGET_NAME}/Firebase/Dev/${GOOGLESERVICE_INFO_PLIST}\nGOOGLESERVICE_INFO_PROD=${PROJECT_DIR}/${TARGET_NAME}/Firebase/Prod/${GOOGLESERVICE_INFO_PLIST}\n\n# Make sure the dev version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEV}\"\nif [ ! -f $GOOGLESERVICE_INFO_DEV ]\nthen\necho \"No Development GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Make sure the prod version of GoogleService-Info.plist exists\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_PROD}\"\nif [ ! -f $GOOGLESERVICE_INFO_PROD ]\nthen\necho \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\nexit 1\nfi\n\n# Get a reference to the destination location for the GoogleService-Info.plist\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\n# Copy over the prod GoogleService-Info.plist for Release builds\nif [ \"${CONFIGURATION}\" == \"Release\" ]\nthen\necho \"Using ${GOOGLESERVICE_INFO_PROD}\"\ncp \"${GOOGLESERVICE_INFO_PROD}\" \"${PLIST_DESTINATION}\"\nelse\necho \"Using ${GOOGLESERVICE_INFO_DEV}\"\ncp \"${GOOGLESERVICE_INFO_DEV}\" \"${PLIST_DESTINATION}\"\nfi\n\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E3D3BDB02935A0EF00FD191C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3D3BDBC2935A0EF00FD191C /* ViewController.swift in Sources */,
+				E37F32F32935A59D00A75ABE /* Extensions.swift in Sources */,
+				E37F32F72935A60100A75ABE /* Statics.swift in Sources */,
+				E37F332D2935B8F200A75ABE /* HomeController.swift in Sources */,
+				E37F32FA2935A63400A75ABE /* MainHeaderCell.swift in Sources */,
+				E37F33262935B0EA00A75ABE /* HorizontalCollectionView.swift in Sources */,
+				E37F32F02935A51900A75ABE /* MainController.swift in Sources */,
+				E37F33352935BD1900A75ABE /* PushNotificationManager.swift in Sources */,
+				E37F32F52935A5F700A75ABE /* Globals.swift in Sources */,
+				E37F32ED2935A35D00A75ABE /* DecisionController.swift in Sources */,
 				E3D3BDB82935A0EF00FD191C /* AppDelegate.swift in Sources */,
+				E37F332A2935B7FC00A75ABE /* MainCardFeederView.swift in Sources */,
 				E3D3BDBA2935A0EF00FD191C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +446,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E3D3BDBD2935A0EF00FD191C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E3D3BDBE2935A0EF00FD191C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E3D3BDC22935A0F000FD191C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +573,7 @@
 		};
 		E3D3BDC92935A0F000FD191C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CBD422ED6B78CBDEC3FC935 /* Pods-projectarlo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +584,6 @@
 				INFOPLIST_FILE = projectarlo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +601,7 @@
 		};
 		E3D3BDCA2935A0F000FD191C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C54708B191ABA62C7D44402B /* Pods-projectarlo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +612,6 @@
 				INFOPLIST_FILE = projectarlo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

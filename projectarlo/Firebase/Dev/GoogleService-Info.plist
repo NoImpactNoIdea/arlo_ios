@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>87148399377-ikqpvsnf2r29k6dkduvb39hlk0a1at7e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.87148399377-ikqpvsnf2r29k6dkduvb39hlk0a1at7e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBAQb8YztouNIOB80visUK_IpJVHYy3jsQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>87148399377</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.noimpactapplications.projectarlo</string>
+	<key>PROJECT_ID</key>
+	<string>arlo-dev-2ea89</string>
+	<key>STORAGE_BUCKET</key>
+	<string>arlo-dev-2ea89.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:87148399377:ios:c5f79506fbfa4ae2199ab0</string>
+</dict>
+</plist>
