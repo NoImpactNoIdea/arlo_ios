@@ -48,9 +48,7 @@ class MainCardFeederView : UIView {
                 
             default: print("do nothing and pop from stack then rerun")
             }
-            
             counter += 1
-            
         }
     }
     
@@ -74,12 +72,11 @@ class MainCardFeederView : UIView {
         card.clipsToBounds = true
        
         
-        var preferredheight = preferredWidth * 1.1
+        var preferredheight = preferredWidth * 1.3
         
         if preferredheight + 50 >= self.frame.height {
-            preferredheight = self.frame.height - 40
-            preferredWidth = preferredWidth - 40
-            print("I AM IN HERE?")
+            preferredheight = self.frame.height - 50
+            preferredWidth = preferredWidth - 50
         }
         
         let cardShadowView = UIView()
@@ -118,7 +115,6 @@ class MainCardFeederView : UIView {
         imageViewPerson.leftAnchor.constraint(equalTo: card.leftAnchor).isActive = true
         imageViewPerson.rightAnchor.constraint(equalTo: card.rightAnchor).isActive = true
         imageViewPerson.topAnchor.constraint(equalTo: card.topAnchor).isActive = true
-        
         
         let bottomContainer = UIView()
         bottomContainer.backgroundColor = .clear
@@ -197,37 +193,6 @@ class MainCardFeederView : UIView {
         
         setGradientBackground(colorTop: UIColor .clear, colorBottom: UIColor .black, view: bottomContainer)
         
-    }
-    
-    @objc func handlePulseAnimation(view : UIView) {
-        
-        UIView.animate(withDuration: 0.04, delay: 0, options: .curveEaseInOut) {
-            
-            view.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-            
-        } completion: { complete in
-            
-            UIView.animate(withDuration: 0.04, delay: 0, options: .curveEaseInOut) {
-                
-                view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                
-            } completion: { complete in
-                UIView.animate(withDuration: 0.04, delay: 0, options: .curveEaseInOut) {
-                    
-                    view.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
-                    
-                } completion: { complete in
-                    
-                    UIView.animate(withDuration: 1.0, delay: 0, options: .curveEaseInOut) {
-                        
-                        view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-                        
-                    } completion: { complete in
-                        print("anim is complete")
-                    }
-                }
-            }
-        }
     }
     
     func setGradientBackground(colorTop: UIColor, colorBottom: UIColor, view : UIView) {

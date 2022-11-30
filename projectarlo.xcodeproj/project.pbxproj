@@ -14,6 +14,11 @@
 		E3173F992936C5B3008C379F /* HeartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173F982936C5B3008C379F /* HeartController.swift */; };
 		E3173F9B2936C5DC008C379F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173F9A2936C5DC008C379F /* SearchController.swift */; };
 		E3173F9D2936C71B008C379F /* DummyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173F9C2936C71B008C379F /* DummyController.swift */; };
+		E3173FA02936E675008C379F /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173F9F2936E675008C379F /* PostController.swift */; };
+		E3173FA32936F894008C379F /* PhotoPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173FA22936F894008C379F /* PhotoPickerController.swift */; };
+		E3173FA52936F8D1008C379F /* PhotoCollectionSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173FA42936F8D1008C379F /* PhotoCollectionSubview.swift */; };
+		E3173FA72936F912008C379F /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173FA62936F912008C379F /* PinterestLayout.swift */; };
+		E3173FA92936F9CC008C379F /* PhotoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3173FA82936F9CC008C379F /* PhotoCollectionCell.swift */; };
 		E37F32ED2935A35D00A75ABE /* DecisionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32EC2935A35D00A75ABE /* DecisionController.swift */; };
 		E37F32F02935A51900A75ABE /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32EF2935A51900A75ABE /* MainController.swift */; };
 		E37F32F32935A59D00A75ABE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F32F22935A59D00A75ABE /* Extensions.swift */; };
@@ -61,6 +66,11 @@
 		E3173F982936C5B3008C379F /* HeartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartController.swift; sourceTree = "<group>"; };
 		E3173F9A2936C5DC008C379F /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		E3173F9C2936C71B008C379F /* DummyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyController.swift; sourceTree = "<group>"; };
+		E3173F9F2936E675008C379F /* PostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		E3173FA22936F894008C379F /* PhotoPickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerController.swift; sourceTree = "<group>"; };
+		E3173FA42936F8D1008C379F /* PhotoCollectionSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionSubview.swift; sourceTree = "<group>"; };
+		E3173FA62936F912008C379F /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		E3173FA82936F9CC008C379F /* PhotoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionCell.swift; sourceTree = "<group>"; };
 		E37F32EC2935A35D00A75ABE /* DecisionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecisionController.swift; sourceTree = "<group>"; };
 		E37F32EF2935A51900A75ABE /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		E37F32F22935A59D00A75ABE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -147,6 +157,25 @@
 			path = SearchController;
 			sourceTree = "<group>";
 		};
+		E3173F9E2936E665008C379F /* PostController */ = {
+			isa = PBXGroup;
+			children = (
+				E3173FA12936F771008C379F /* PhotoSelector */,
+				E3173F9F2936E675008C379F /* PostController.swift */,
+			);
+			path = PostController;
+			sourceTree = "<group>";
+		};
+		E3173FA12936F771008C379F /* PhotoSelector */ = {
+			isa = PBXGroup;
+			children = (
+				E3173FA22936F894008C379F /* PhotoPickerController.swift */,
+				E3173FA42936F8D1008C379F /* PhotoCollectionSubview.swift */,
+				E3173FA82936F9CC008C379F /* PhotoCollectionCell.swift */,
+			);
+			path = PhotoSelector;
+			sourceTree = "<group>";
+		};
 		E37F32EA2935A27800A75ABE /* Admin */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +206,7 @@
 				E37F32F62935A60100A75ABE /* Statics.swift */,
 				E37F33342935BD1900A75ABE /* PushNotificationManager.swift */,
 				E3173F9C2936C71B008C379F /* DummyController.swift */,
+				E3173FA62936F912008C379F /* PinterestLayout.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -308,6 +338,7 @@
 		E3D3BDB62935A0EF00FD191C /* projectarlo */ = {
 			isa = PBXGroup;
 			children = (
+				E3173F9E2936E665008C379F /* PostController */,
 				E37F332E2935BB3500A75ABE /* Firebase */,
 				E37F32EA2935A27800A75ABE /* Admin */,
 				E37F32EE2935A50500A75ABE /* Tabs */,
@@ -476,14 +507,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3173FA72936F912008C379F /* PinterestLayout.swift in Sources */,
 				E3173F9D2936C71B008C379F /* DummyController.swift in Sources */,
 				E37F32F32935A59D00A75ABE /* Extensions.swift in Sources */,
 				E3173F9B2936C5DC008C379F /* SearchController.swift in Sources */,
 				E37F32F72935A60100A75ABE /* Statics.swift in Sources */,
 				E37F332D2935B8F200A75ABE /* HomeController.swift in Sources */,
+				E3173FA92936F9CC008C379F /* PhotoCollectionCell.swift in Sources */,
 				E37F32FA2935A63400A75ABE /* MainHeaderCell.swift in Sources */,
+				E3173FA32936F894008C379F /* PhotoPickerController.swift in Sources */,
 				E37F33262935B0EA00A75ABE /* HorizontalCollectionView.swift in Sources */,
 				E37F32F02935A51900A75ABE /* MainController.swift in Sources */,
+				E3173FA52936F8D1008C379F /* PhotoCollectionSubview.swift in Sources */,
 				E37F33352935BD1900A75ABE /* PushNotificationManager.swift in Sources */,
 				E37F32F52935A5F700A75ABE /* Globals.swift in Sources */,
 				E37F32ED2935A35D00A75ABE /* DecisionController.swift in Sources */,
@@ -492,6 +527,7 @@
 				E37F33382935C0CE00A75ABE /* MessageController.swift in Sources */,
 				E3173F992936C5B3008C379F /* HeartController.swift in Sources */,
 				E3D3BDBA2935A0EF00FD191C /* SceneDelegate.swift in Sources */,
+				E3173FA02936E675008C379F /* PostController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

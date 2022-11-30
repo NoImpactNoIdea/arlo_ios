@@ -118,10 +118,10 @@ class MainController : UIViewController {
         self.view.addSubview(self.viewAll)
         self.view.addSubview(self.centerPipLine)
 
-        self.mainHeaderCell.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
+        self.mainHeaderCell.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 7.5).isActive = true
         self.mainHeaderCell.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.mainHeaderCell.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
-        self.mainHeaderCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        self.mainHeaderCell.heightAnchor.constraint(equalToConstant: self.view.frame.height / spotlightDivisorHeight).isActive = true
         
         self.spotLightCollectionView.topAnchor.constraint(equalTo: self.mainHeaderCell.bottomAnchor, constant: 10).isActive = true
         self.spotLightCollectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
@@ -138,7 +138,7 @@ class MainController : UIViewController {
         self.nearYouLabel.heightAnchor.constraint(equalToConstant: 30).isActive = true
         self.nearYouLabel.widthAnchor.constraint(equalToConstant: 100).isActive = true
         
-        self.mainCardFeederView.topAnchor.constraint(equalTo: self.viewAll.bottomAnchor, constant: -10).isActive = true
+        self.mainCardFeederView.topAnchor.constraint(equalTo: self.viewAll.bottomAnchor, constant: 0).isActive = true
         self.mainCardFeederView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         self.mainCardFeederView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         self.mainCardFeederView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -50).isActive = true

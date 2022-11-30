@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Please allow access to the devices photos so you can add your 3 photo collage.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Raleway-BlackItalic.ttf</string>

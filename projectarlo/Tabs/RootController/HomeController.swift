@@ -74,7 +74,8 @@ class HomeController : UITabBarController {
         hfb.layer.shadowOffset = CGSize(width: 0, height: 20)
         hfb.layer.shadowRadius = 15
         hfb.layer.shouldRasterize = false
-        hfb.isUserInteractionEnabled = false
+        hfb.isUserInteractionEnabled = true
+        hfb.addTarget(self, action: #selector(self.handlePostController), for: .touchUpInside)
         
        return hfb
     }()
@@ -104,6 +105,17 @@ class HomeController : UITabBarController {
        
         self.appearance()
         self.shouldShowNewMatchNotification(shouldShow: true)
+        
+    }
+    
+    @objc func handlePostController() {
+        
+        let postController = PostController()
+        let nav = UINavigationController(rootViewController: postController)
+        nav.modalPresentationStyle = .popover
+        nav.navigationBar.isHidden = true
+        
+        self.navigationController?.present(nav, animated: true)
         
     }
     
@@ -167,8 +179,6 @@ class HomeController : UITabBarController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
-//        self.tabBar.itemPositioning = .
         self.tabBar.itemSpacing = 10
     }
     
@@ -222,6 +232,8 @@ class HomeController : UITabBarController {
         viewControllers = [mainController, searchController, dummyController, heartController, messagesController]
         
         guard let mainTabFrame = self.tabBar.items![0].value(forKey: "view") as? UIView else {return}///fetches the frame to place the notification circle
+        guard let centerTab = self.tabBar.items![2].value(forKey: "view") as? UIView else {return}
+        centerTab.isUserInteractionEnabled = false
         
         self.tabBar.addSubview(self.centerButton)
         self.centerButton.centerXAnchor.constraint(equalTo: self.tabBar.centerXAnchor, constant: 0).isActive = true

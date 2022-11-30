@@ -34,7 +34,7 @@ class SpotLightCollectionView : UICollectionView, UICollectionViewDelegateFlowLa
         self.canCancelContentTouches = false
         self.contentInsetAdjustmentBehavior = .never
         self.delaysContentTouches = true
-        self.contentInset = UIEdgeInsets(top: 0, left: 21, bottom: 0, right: 0)
+        self.contentInset = UIEdgeInsets(top: 0, left: 28, bottom: 0, right: 0)
         
         self.register(SpotLightFeeder.self, forCellWithReuseIdentifier: self.spotlightID)
         

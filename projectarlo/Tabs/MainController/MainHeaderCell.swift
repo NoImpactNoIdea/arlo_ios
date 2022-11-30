@@ -63,8 +63,19 @@ class MainHeaderCell : UIView {
         self.backgroundColor = coreWhiteColor
         self.addViews()
         
+        var fontSize : CGFloat = 0.0
+        
+        if UIScreen.main.bounds.height <= 667 {
+            self.headerLabel.font = UIFont(name: ralewayLight, size: 30)
+            fontSize = 25.0
+
+        } else {
+            self.headerLabel.font = UIFont(name: ralewayLight, size: 35)
+            fontSize = 30.0
+        }
+        
         let fullMessage = "Hello,\nCristina"
-        self.headerLabel.colorFontString(text: fullMessage, coloredText: "Cristina", color: coreMediumColor, fontName: ralewaySemiBold, fontSize: 35)
+        self.headerLabel.colorFontString(text: fullMessage, coloredText: "Cristina", color: coreMediumColor, fontName: ralewaySemiBold, fontSize: fontSize)
         self.headerLabel.setLineSpacing(lineSpacing: 0.1, lineHeightMultiple: 1.0)
         
         self.callAnimation()
@@ -76,17 +87,31 @@ class MainHeaderCell : UIView {
         self.addSubview(self.pulseAnimation)
         self.addSubview(self.messagesButton)
         self.addSubview(self.headerLabel)
-
-        self.messagesButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
-        self.messagesButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
-        self.messagesButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
-        self.messagesButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
-        self.messagesButton.layer.cornerRadius = 44/2
         
-        self.pulseAnimation.centerYAnchor.constraint(equalTo: self.messagesButton.centerYAnchor, constant: 0).isActive = true
-        self.pulseAnimation.centerXAnchor.constraint(equalTo: self.messagesButton.centerXAnchor, constant: 0).isActive = true
-        self.pulseAnimation.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        self.pulseAnimation.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        if UIScreen.main.bounds.height <= 667 {
+            self.messagesButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+            self.messagesButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+            self.messagesButton.heightAnchor.constraint(equalToConstant: 34).isActive = true
+            self.messagesButton.widthAnchor.constraint(equalToConstant: 34).isActive = true
+            self.messagesButton.layer.cornerRadius = 34/2
+            
+            self.pulseAnimation.centerYAnchor.constraint(equalTo: self.messagesButton.centerYAnchor, constant: 0).isActive = true
+            self.pulseAnimation.centerXAnchor.constraint(equalTo: self.messagesButton.centerXAnchor, constant: 0).isActive = true
+            self.pulseAnimation.heightAnchor.constraint(equalToConstant: 60).isActive = true
+            self.pulseAnimation.widthAnchor.constraint(equalToConstant: 60).isActive = true
+        } else {
+            self.messagesButton.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
+            self.messagesButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -30).isActive = true
+            self.messagesButton.heightAnchor.constraint(equalToConstant: 44).isActive = true
+            self.messagesButton.widthAnchor.constraint(equalToConstant: 44).isActive = true
+            self.messagesButton.layer.cornerRadius = 44/2
+            
+            self.pulseAnimation.centerYAnchor.constraint(equalTo: self.messagesButton.centerYAnchor, constant: 0).isActive = true
+            self.pulseAnimation.centerXAnchor.constraint(equalTo: self.messagesButton.centerXAnchor, constant: 0).isActive = true
+            self.pulseAnimation.heightAnchor.constraint(equalToConstant: 70).isActive = true
+            self.pulseAnimation.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        }
+       
         
         self.headerLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: 0).isActive = true
         self.headerLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 35).isActive = true
